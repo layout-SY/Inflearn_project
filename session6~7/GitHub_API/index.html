@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>GitHub Finder</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">GitHub Finder</h1>
+			<div class="search-container">
+				<h2>Search GitHub Users</h2>
+				<p>Enter a username to fetch a user profile and repos</p>
+				<input type="text" id="searchUser" placeholder="Enter GitHub username..." />
+			</div>
+			<div id="profile" class="profile-container">
+				<div class="profile-card">
+					<img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-img" />
+					<a href="#" class="btn">View Profile</a>
+				</div>
+				<div class="profile-info">
+					<span class="badge blue" id="public-repo">Public Repos: 0</span>
+					<span class="badge grey" id="public-Gists">Public Gists: 0</span>
+					<span class="badge green" id="Followers">Followers: 0</span>
+					<span class="badge dark" id="Following">Following: 0</span>
+					<ul>
+						<li id="company"><strong>Company:</strong> null</li>
+						<li id="email">
+							<strong>email:</strong>
+							<a id="email-url" href="https://www.youtube.com/channel/UCfYXA9x8lpL3EYWeyYh4C4Q"
+								>Email Address</a
+							>
+						</li>
+						<li id="location"><strong>Location:</strong></li>
+						<li id="members"><strong>Member Since:</strong></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Latest Repos Section -->
+			<div class="repoList_wrap">
+				<h3 class="repoTitle">Latest Repos</h3>
+				<ul class="repoList"></ul>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

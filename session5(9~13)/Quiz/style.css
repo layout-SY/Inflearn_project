@@ -1,0 +1,90 @@
+/* Basic reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+	font-family: 'Arial', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: white; /* Default background color */
+	transition: background-color 0.5s ease; /* Smooth background transition */
+}
+
+.quiz-container {
+	background-color: #f5f5f5;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+.questions-container {
+	margin-bottom: 20px;
+}
+
+h4 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+/* Answer buttons styling */
+.answer-container button,
+.next-container button {
+	width: 120px;
+	height: 40px;
+	margin: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	background-color: #fff;
+	color: #333;
+	transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.answer-container button:hover {
+	background-color: #ddd;
+}
+
+/* Button styles for correct/wrong answers */
+.correct-answer {
+	background-color: green !important; /* Correct answer: green */
+	color: white;
+}
+
+.wrong-answer {
+	background-color: red !important; /* Wrong answer: red */
+	color: white;
+}
+
+button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+/* Background color transitions */
+.correct-background {
+	background-color: green !important;
+}
+
+.wrong-background {
+	background-color: red !important;
+}
+
+/* Next button styling */
+.next-container button {
+	background-color: #4caf50;
+	color: white;
+}
+
+.next-container button:disabled {
+	background-color: #888;
+}

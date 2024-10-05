@@ -1,0 +1,99 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+body {
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.filter-buttons {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.filter-btn {
+	background-color: #fff;
+	border: 1px solid #007bff;
+	padding: 10px 20px;
+	margin: 0 5px;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #007bff;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.menu {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.menu-item {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	display: none; /* 기본적으로 숨김 */
+}
+
+.menu-item img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	margin-right: 15px;
+}
+
+.menu-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu-info h4 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.price {
+	float: right;
+	color: #007bff;
+	font-weight: bold;
+}
+
+.menu-info p {
+	font-size: 14px;
+	color: #666;
+}
+
+/* 보이는 상태일 때 */
+.menu-item.show {
+	display: flex;
+}

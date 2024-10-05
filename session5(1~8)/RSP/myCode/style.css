@@ -1,0 +1,11 @@
+.result-container {
+	display: none;
+}
+
+.result-container.show {
+	display: flex;
+}
+
+.select-container.hide {
+	display: none;
+}

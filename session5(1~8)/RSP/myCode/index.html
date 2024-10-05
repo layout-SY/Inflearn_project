@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="header-h1">
+			<h1>가위 바위 보</h1>
+		</div>
+		<div class="score-container">
+			<div class="player-score">
+				<h2>플레이어</h2>
+				<h3 id="player-score">0</h3>
+			</div>
+			<div class="computer-score">
+				<h2>컴퓨터</h2>
+				<h3 id="computer-score">0</h3>
+			</div>
+		</div>
+		<div class="select-container">
+			<div id="selete">
+				<h2>선택하기</h2>
+				<h4 id="count">남은 횟수</h4>
+			</div>
+			<div id="choices">
+				<button class="btn btn-primary" id="rock">바위</button>
+				<button class="btn btn-primary" id="scissor">가위</button>
+				<button class="btn btn-primary" id="paper">보</button>
+			</div>
+			<div id="cycle-result"></div>
+		</div>
+		<div class="result-container tab">
+			<div class="game-set">
+				<h2>게임 종료 !!</h2>
+			</div>
+			<div class="game-result">
+				<h2 id="win" hidden>게임에서 이겼습니다 !!</h2>
+				<h2 id="lose" hidden>게임에서 졌습니다 !!</h2>
+				<h2 id="pair" hidden>무승부 입니다 !!!</h2>
+			</div>
+			<button class="btn btn-primary" id="reset">재시작</button>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
