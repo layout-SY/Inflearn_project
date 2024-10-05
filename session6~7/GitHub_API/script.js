@@ -9,7 +9,11 @@ window.onload = function () {
 		});
 
 	function GitHub_API_Token() {
-		return 'GitHub_Token(header에 담아 전송)';
+		return {
+			headers: {
+				Authorization: `token github_token`,
+			},
+		};
 	}
 
 	async function searchUserGitHub(username) {
