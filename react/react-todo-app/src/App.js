@@ -15,14 +15,19 @@ export default function App() {
 			let newTodoData = todoData.filter((data) => data.id !== id);
 			setTodoData(newTodoData);
 		},
-		[todoData]
+		[todoData] // 이 객체가 변화하지 않으면 리렌더링 되지 않음. 최초 1번만 렌더링됨.
 	);
+
+	const handleDeleteAll = () => {
+		setTodoData([]);
+	};
 
 	return (
 		<div className="flex items-center justify-center w-screen h-screen bg-blue-300">
 			<div className="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg">
 				<div className="flex justify-between mb-3">
 					<h1>오늘 할 일</h1>
+					<button onClick={handleDeleteAll}>Delete All</button>
 				</div>
 				<List
 					todoData={todoData}
@@ -34,7 +39,6 @@ export default function App() {
 					value={value}
 					setValue={setValue}
 				/>
-
 				<div class="getStyle"></div>
 			</div>
 		</div>
