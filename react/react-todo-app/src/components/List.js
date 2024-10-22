@@ -7,7 +7,7 @@ import {
 } from 'react-beautiful-dnd';
 import Lists from './Lists';
 
-const List = React.memo(({ todoData, setTodoData }) => {
+const List = React.memo(({ todoData, setTodoData, handleClick }) => {
 	const handleEnd = (result) => {
 		if (!result.destination) return;
 		const newTodoData = [...todoData]; // 상태 불변성을 위해 배열 복사
@@ -15,6 +15,7 @@ const List = React.memo(({ todoData, setTodoData }) => {
 		newTodoData.splice(result.destination.index, 0, reorderedItem);
 		setTodoData(newTodoData);
 	};
+
 	return (
 		<div>
 			<DragDropContext onDragEnd={handleEnd}>
@@ -32,6 +33,7 @@ const List = React.memo(({ todoData, setTodoData }) => {
 								>
 									{(provided, snapshot) => (
 										<Lists
+											handleClick={handleClick}
 											key={data.id}
 											id={data.id}
 											title={data.title}

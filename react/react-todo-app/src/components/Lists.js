@@ -8,13 +8,9 @@ export const Lists = React.memo(
 		todoData,
 		setTodoData,
 		provided,
-		snapshot
+		snapshot,
+		handleClick
 	}) => {
-		const handleClick = (id) => {
-			let newTodoData = todoData.filter((data) => data.id !== id);
-			setTodoData(newTodoData);
-		};
-
 		const handleCompleteChange = (id) => {
 			let newTodoData = todoData.map((data) => {
 				if (data.id === id) {

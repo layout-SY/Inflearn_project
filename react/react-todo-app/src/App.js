@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './App.css';
 import List from './components/List';
 import Form from './components/Form';
@@ -9,13 +9,26 @@ export default function App() {
 	const [todoData, setTodoData] = useState([]);
 	const [value, setValue] = useState(''); //첫 번째 인수는 변수 이름, 두 번쨰 인수는 State를 정하는 함수
 
+	const handleClick = useCallback(
+		// useCallback을 통해 함수 재렌더링 방지
+		(id) => {
+			let newTodoData = todoData.filter((data) => data.id !== id);
+			setTodoData(newTodoData);
+		},
+		[todoData]
+	);
+
 	return (
 		<div className="flex items-center justify-center w-screen h-screen bg-blue-300">
 			<div className="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg">
 				<div className="flex justify-between mb-3">
 					<h1>오늘 할 일</h1>
 				</div>
-				<List todoData={todoData} setTodoData={setTodoData} />
+				<List
+					todoData={todoData}
+					setTodoData={setTodoData}
+					handleClick={handleClick}
+				/>
 				<Form
 					setTodoData={setTodoData}
 					value={value}
