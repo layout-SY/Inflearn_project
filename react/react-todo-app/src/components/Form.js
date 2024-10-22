@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Form({ setTodoData, value, setValue }) {
+export default function Form({ setTodoData, value, setValue, todoData }) {
 	const handleChange = (e) => {
 		setValue(e.target.value);
 	};
@@ -15,6 +15,10 @@ export default function Form({ setTodoData, value, setValue }) {
 		};
 
 		setTodoData((prev) => [...prev, newTodo]);
+		localStorage.setItem(
+			'todoData',
+			JSON.stringify([...todoData, newTodo])
+		);
 		setValue('');
 	};
 

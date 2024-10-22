@@ -19,6 +19,7 @@ export const Lists = React.memo(
 				return data;
 			});
 			setTodoData(newTodoData);
+			localStorage.setItem('todoData', JSON.stringify(newTodoData));
 		};
 
 		const handleEditChange = (e) => {
@@ -34,7 +35,7 @@ export const Lists = React.memo(
 				return data;
 			});
 			setTodoData(newTodoData);
-			setIsEditing(false);
+			localStorage.setItem('todoData', JSON.stringify(newTodoData));
 		};
 
 		const [isEditing, setIsEditing] = useState(false);
