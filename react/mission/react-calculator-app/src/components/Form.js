@@ -1,6 +1,16 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 
-function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValue, btnValue, setBtnValue }) {
+function Form({
+	calculateItem,
+	setCalculateItem,
+	title,
+	setTitle,
+	value,
+	setValue,
+	btnValue,
+	setBtnValue,
+	setTotalPrice,
+}) {
 	const handleTitleChange = (e) => {
 		setTitle(e.target.value);
 	};
@@ -37,6 +47,19 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 
 		setTitle('');
 		setValue(0);
+	};
+
+	useEffect(() => {
+		setTotalPrice(countTotalPrice());
+	}, [calculateItem]);
+
+	const countTotalPrice = () => {
+		let price = 0;
+		calculateItem.forEach((item) => {
+			price += parseInt(item.value);
+		});
+
+		return price;
 	};
 
 	return (
