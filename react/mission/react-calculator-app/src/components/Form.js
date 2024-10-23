@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValue }) {
+function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValue, btnValue, setBtnValue }) {
 	const handleTitleChange = (e) => {
 		setTitle(e.target.value);
 	};
@@ -12,13 +12,29 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		let newCalculateItem = {
-			id: Date.now(),
-			title: title,
-			value: value,
-		};
+		setCalculateItem((prev) => {
+			const found = prev.find((data) => data.title === title);
 
-		setCalculateItem((prev) => [...prev, newCalculateItem]);
+			if (found) {
+				setBtnValue('제출');
+
+				return prev.map((data) => {
+					if (data.title === title) {
+						return { ...data, value: value };
+					}
+					return data;
+				});
+			} else {
+				let newCalculateItem = {
+					id: Date.now(),
+					title: title,
+					value: value,
+				};
+
+				return [...prev, newCalculateItem];
+			}
+		});
+
 		setTitle('');
 		setValue(0);
 	};
@@ -51,7 +67,7 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 						type="submit"
 						className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
 					>
-						제출
+						{btnValue}
 					</button>
 				</div>
 			</div>

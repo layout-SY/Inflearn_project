@@ -8,6 +8,7 @@ function App() {
 	let [calculateItem, setCalculateItem] = useState([]);
 	let [title, setTitle] = useState('');
 	let [value, setValue] = useState(0);
+	let [btnValue, setBtnValue] = useState('제출');
 
 	return (
 		<div className="bg-yellow-100 h-screen flex justify-center items-center">
@@ -22,6 +23,8 @@ function App() {
 					setTitle={setTitle}
 					value={value}
 					setValue={setValue}
+					btnValue={btnValue}
+					setBtnValue={setBtnValue}
 				/>
 				<List
 					calculateItem={calculateItem}
@@ -30,6 +33,7 @@ function App() {
 					setTitle={setTitle}
 					value={value}
 					setValue={setValue}
+					setBtnValue={setBtnValue}
 				/>
 				<Total value={value} setValue={setValue} />
 			</div>
