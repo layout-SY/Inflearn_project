@@ -1,6 +1,14 @@
 import React from 'react';
 
 function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValue }) {
+	const handleTitleChange = (e) => {
+		setTitle(e.target.value);
+	};
+
+	const handleValueChange = (e) => {
+		setValue(e.target.value);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -9,6 +17,10 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 			title: title,
 			value: value,
 		};
+
+		setCalculateItem((prev) => [...prev, newCalculateItem]);
+		setTitle('');
+		setValue(0);
 	};
 
 	return (
@@ -20,6 +32,8 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 						type="text"
 						className="w-full p-2 border-b-2 border-yellow-300 focus:border-yellow-500 focus:outline-none"
 						placeholder="예) 렌트비"
+						value={title}
+						onChange={handleTitleChange}
 					/>
 				</div>
 				<div className="col-span-6">
@@ -28,6 +42,8 @@ function Form({ calculateItem, setCalculateItem, title, setTitle, value, setValu
 						type="text"
 						className="w-full p-2 border-b-2 border-yellow-300 focus:border-yellow-500 focus:outline-none"
 						placeholder="0"
+						value={value}
+						onChange={handleValueChange}
 					/>
 				</div>
 				<div className="col-span-12 flex justify-start mt-4">

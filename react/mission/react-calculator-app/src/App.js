@@ -7,7 +7,7 @@ import Total from './components/Total';
 function App() {
 	let [calculateItem, setCalculateItem] = useState([]);
 	let [title, setTitle] = useState('');
-	let [value, setValue] = useState();
+	let [value, setValue] = useState(0);
 
 	return (
 		<div className="bg-yellow-100 h-screen flex justify-center items-center">

@@ -1,7 +1,13 @@
 import React from 'react';
 
-function List() {
-	return <div>List</div>;
+function List({ calculateItem, setCalculateItem, title, setTitle, value, setValue }) {
+	return (
+		<div>
+			{console.log(`calculateItemTitle: ${calculateItem.title}
+				title: ${title}
+                value: ${value}`)}
+		</div>
+	);
 }
 
 export default List;
