@@ -17,7 +17,7 @@ function App() {
 				<div className="title text-center mb-8">
 					<h1 className="text-3xl font-bold text-gray-700">예산 계산기</h1>
 				</div>
-				<Form
+				<Form //이게 한마디로 전부 다 props
 					calculateItem={calculateItem}
 					setCalculateItem={setCalculateItem}
 					title={title}
@@ -31,9 +31,7 @@ function App() {
 				<List
 					calculateItem={calculateItem}
 					setCalculateItem={setCalculateItem}
-					title={title}
 					setTitle={setTitle}
-					value={value}
 					setValue={setValue}
 					setBtnValue={setBtnValue}
 				/>

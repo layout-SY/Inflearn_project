@@ -1,6 +1,6 @@
 import React from 'react';
 
-function List({ calculateItem, setCalculateItem, title, setTitle, value, setValue, setBtnValue }) {
+function List({ calculateItem, setCalculateItem, setTitle, setValue, setBtnValue }) {
 	const handleUpdate = (data) => {
 		setTitle(data.title);
 		setValue(data.value);
