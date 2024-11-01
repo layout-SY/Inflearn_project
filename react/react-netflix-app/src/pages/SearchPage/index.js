@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import instance from '../../api/axios';
 import './SearchPage.css';
 import { useDebounce } from '../../hooks/useDebounce';
 
 export default function SearchPage() {
+	const navigate = useNavigate();
 	const [searchResults, setSearchResults] = useState([]);
 
 	console.log(useLocation());
@@ -39,8 +40,10 @@ export default function SearchPage() {
 					if (movie.backdrop_path !== null && movie.media_type !== 'person') {
 						const movieImageUrl = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path;
 						return (
-							<div className="movie__column-poster">
-								<img src={movieImageUrl} alt="movie" className="movie__poster" />
+							<div className="movie" key={movie.id}>
+								<div onClick={() => navigate(`/${movie.id}`)} className="movie__column-poster">
+									<img src={movieImageUrl} alt="movie" className="movie__poster" />
+								</div>
 							</div>
 						);
 					}
