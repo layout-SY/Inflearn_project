@@ -1,15 +1,16 @@
 import './App.css';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav';
-import Footer from './components/footer';
-import { MainPage } from './pages/MainPage/MainPage';
-import { DetailPage } from './pages/DetailPage/DetailPage';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import MainPage from './pages/MainPage/MainPage';
+import DetailPage from './pages/DetailPage/DetailPage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
 	const Layout = () => {
 		return (
 			<div>
-				<Nav />
+				<Header />
 
 				<Outlet />
 
@@ -22,8 +23,9 @@ function App() {
 		<div>
 			<Routes>
 				<Route path="/" element={<Layout />}>
-					<Route index element={<MainPage />} />
-					<Route path=":moveId" element={<DetailPage />} />
+					<Route index element={<HomePage />} />
+					<Route path="main" element={<MainPage />} />
+					<Route path="main/:moveId" element={<DetailPage />} />
 				</Route>
 			</Routes>
 		</div>
