@@ -4,8 +4,10 @@ import { initializeApp } from 'firebase/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+const firebaseApiKey = import.meta.env.VITE_FIREBASE_KEY;
+
 const firebaseConfig = {
-	apiKey: 'AIzaSyBEkjzC8CoNopTiejG2Wv_P5PkMC_h8PQQ',
+	apiKey: firebaseApiKey,
 	authDomain: 'react-disnayplus-app.firebaseapp.com',
 	projectId: 'react-disnayplus-app',
 	storageBucket: 'react-disnayplus-app.firebasestorage.app',

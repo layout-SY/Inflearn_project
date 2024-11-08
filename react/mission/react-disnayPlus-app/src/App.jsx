@@ -6,13 +6,16 @@ import HomePage from './pages/HomePage/HomePage';
 import MainPage from './pages/MainPage/MainPage';
 import DetailPage from './pages/DetailPage/DetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import { Outlet } from 'react-router-dom';
 import './App.css';
 
-function Layout({ children }) {
+function Layout() {
 	return (
 		<div>
 			<Header />
-			<main>{children}</main>
+			<main>
+				<Outlet />
+			</main>
 			<Footer />
 		</div>
 	);
@@ -20,17 +23,15 @@ function Layout({ children }) {
 
 function App() {
 	return (
-		<Router>
-			<Layout>
-				<Routes>
-					<Route path="/" element={<HomePage />} />
-					<Route path="/main" element={<MainPage />} />
-					<Route path="/main/:movieId" element={<DetailPage />} />
-					<Route path="/profile" element={<ProfilePage />} />
-					<Route path="*" element={<Navigate to="/" />} />
-				</Routes>
-			</Layout>
-		</Router>
+		<Routes>
+			<Route path="/" element={<Layout />}>
+				<Route index element={<HomePage />} />
+				<Route path="main" element={<MainPage />} />
+				<Route path="main/:movieId" element={<DetailPage />} />
+				<Route path="profile" element={<ProfilePage />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Route>
+		</Routes>
 	);
 }
 

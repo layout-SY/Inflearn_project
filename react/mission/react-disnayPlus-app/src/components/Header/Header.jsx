@@ -23,7 +23,7 @@ const Nav = () => {
 		<nav className={`nav`}>
 			<img
 				src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Disney%2B_2024.svg/220px-Disney%2B_2024.svg.png"
-				alt="DisnayPlus logo"
+				alt="DisneyPlus logo"
 				className="header_logo"
 				onClick={() => window.location.reload()}
 			/>

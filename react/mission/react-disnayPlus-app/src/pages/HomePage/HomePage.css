@@ -1,5 +1,3 @@
-/* HomePage.css */
-
 .homepage {
 	background-color: #0072d2;
 	background-size: cover;
@@ -74,7 +72,7 @@
 }
 
 .homepage-signup-button {
-	background-color: #0072d2; /* 파란색 버튼 */
+	background-color: #0072d2;
 	color: white;
 	font-size: 18px;
 	padding: 12px 24px;
