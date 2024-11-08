@@ -1,8 +1,151 @@
-# React + Vite
+# 디즈니플러스 (Disney Plus) 프로젝트 Todo 리스트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 프로젝트 구조
 
-Currently, two official plugins are available:
+-   **src**
+    -   **api**
+        -   `axios.js`
+        -   `requests.js`
+        -   `auth.js`
+    -   **components**
+        -   `Footer`
+        -   `Header`
+        -   `SearchBar`
+        -   `MovieCard`
+        -   `Pagination`
+    -   **pages**
+        -   `HomePage`
+        -   `MainPage`
+        -   `DetailPage`
+        -   `ProfilePage`
+    -   **utils**
+        -   `helpers.js`
+    -   `App.jsx`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 상세 기능 구현 Todo 리스트
+
+### 1. **API 폴더** (`src/api`)
+
+#### `axios.js`
+
+-   [ ] **Axios 기본 설정**: KMDB API의 기본 URL과 공통 헤더를 설정하여 API 호출을 간편화.
+-   [ ] **API 키 적용**: `.env` 파일에 있는 API 키를 읽어와 요청 시 자동으로 포함하도록 설정.
+
+#### `requests.js`
+
+-   [ ] **`fetchMovies` 함수**: 영화 목록을 검색할 때 사용할 함수. 제목, 감독, 장르 등 조건을 받아 API 요청을 보내고 결과를 반환.
+-   [ ] **`fetchMovieDetail` 함수**: 특정 영화의 상세 정보를 가져오는 함수. 영화 ID를 받아 API 요청을 수행.
+-   [ ] **에러 핸들링**: 요청 실패 시 적절한 오류 메시지를 반환하여 UI에서 처리할 수 있도록 설정.
+
+#### `auth.js`
+
+-   [ ] **`login` 함수**: 사용자 로그인 요청을 처리하는 함수. 이메일과 비밀번호를 받아 인증 요청을 수행.
+-   [ ] **`register` 함수**: 신규 사용자 회원가입 요청을 처리하는 함수.
+-   [ ] **토큰 저장**: 로그인 성공 시 JWT 토큰을 `localStorage`에 저장하여 이후 요청에 사용.
+
+---
+
+### 2. **컴포넌트 폴더** (`src/components`)
+
+#### `Footer/Footer.jsx`
+
+-   [ ] **회사 정보 및 소셜 링크**: 회사 정보와 소셜 미디어 링크 표시.
+-   [ ] **정적 링크**: 이용 약관, 개인정보 처리 방침 등의 링크 추가.
+
+#### `Header/Header.jsx`
+
+-   [ ] **로고 및 네비게이션 링크**: 로고 클릭 시 홈으로 이동, 네비게이션 링크를 통해 메인 페이지와 프로필 페이지로 이동 가능.
+-   [ ] **검색 기능 통합**: `SearchBar` 컴포넌트를 포함하여 사용자가 Header에서 바로 검색할 수 있도록 구현.
+
+#### `SearchBar/SearchBar.jsx`
+
+-   [ ] **검색 입력 필드**: 영화명, 감독명, 키워드 등을 입력할 수 있는 필드 생성.
+-   [ ] **필터 선택**: 장르, 국가, 제작년도 필터 추가하여 검색 결과를 제한할 수 있도록 구현.
+-   [ ] **검색 버튼**: 검색 버튼을 누르면 입력된 값을 기반으로 `fetchMovies` 호출.
+
+#### `MovieCard/MovieCard.jsx`
+
+-   [ ] **영화 정보 표시**: 영화 포스터, 제목, 개봉 연도 등을 카드 형태로 표시.
+-   [ ] **찜하기 버튼**: 사용자가 영화를 찜할 수 있는 버튼 추가.
+-   [ ] **상세 페이지 링크**: 카드 클릭 시 영화 ID를 기반으로 `DetailPage`로 이동.
+
+#### `Pagination/Pagination.jsx`
+
+-   [ ] **페이지 번호 버튼**: 현재 페이지와 이동 가능한 페이지 번호 표시.
+-   [ ] **이전/다음 버튼**: 페이지 번호에 따라 이전 페이지와 다음 페이지로 이동 가능하도록 설정.
+-   [ ] **API 호출 연동**: 페이지 이동 시 해당 페이지의 영화 목록을 가져오도록 `fetchMovies`에 페이지 번호 전달.
+
+---
+
+### 3. **페이지 폴더** (`src/pages`)
+
+#### `HomePage/HomePage.jsx`
+
+-   [ ] **추천 영화 섹션**: `fetchMovies`를 통해 인기 영화 또는 추천 영화를 가져와 섹션으로 표시.
+-   [ ] **카테고리별 섹션**: 장르별, 국가별로 카테고리를 나누어 각각 영화 목록을 슬라이더 형태로 표시.
+-   [ ] **슬라이더 컴포넌트 통합**: 각 카테고리별 영화 목록을 슬라이더로 보여주는 UI 구현.
+
+#### `MainPage/MainPage.jsx`
+
+-   [ ] **영화 목록 검색 기능**: `SearchBar`를 포함하여 사용자가 원하는 영화를 검색할 수 있도록 설정.
+-   [ ] **페이지네이션 구현**: `Pagination` 컴포넌트를 포함하여 여러 페이지에 걸쳐 검색 결과를 표시.
+-   [ ] **필터링 기능**: KMDB API에서 제공하는 필터 옵션을 사용하여 국가, 장르 등을 기반으로 결과 제한.
+
+#### `DetailPage/DetailPage.jsx`
+
+-   [ ] **영화 상세 정보 표시**: `fetchMovieDetail` 함수를 호출하여 선택한 영화의 줄거리, 배우, 감독 등 상세 정보 표시.
+-   [ ] **찜하기 기능**: 사용자가 영화를 찜할 수 있도록 구현하여 `ProfilePage`에 저장.
+-   [ ] **관련 영화 추천**: 현재 영화와 비슷한 장르의 영화를 추천 목록으로 표시.
+
+#### `ProfilePage/ProfilePage.jsx`
+
+-   [ ] **찜한 영화 목록**: 사용자가 찜한 영화를 `localStorage` 또는 Firebase에서 가져와 표시.
+-   [ ] **시청 기록 관리**: 사용자가 본 영화 목록을 시청 기록으로 저장하고 표시.
+-   [ ] **사용자 정보 표시**: 사용자 이름, 이메일 등 프로필 정보 표시.
+
+---
+
+### 4. **유틸리티 폴더** (`src/utils`)
+
+#### `helpers.js`
+
+-   [ ] **날짜 포맷팅 함수**: API에서 가져온 날짜를 사용자에게 보기 좋게 변환하는 함수.
+-   [ ] **에러 처리 함수**: API 요청 실패 시 사용자에게 표시할 에러 메시지를 생성하는 함수.
+-   [ ] **토큰 유효성 검사 함수**: `localStorage`에 저장된 JWT 토큰의 유효성을 검사하는 함수.
+
+---
+
+### 5. **메인 파일** (`src/App.jsx`)
+
+#### `App.jsx`
+
+-   [ ] **라우트 설정**: `react-router-dom`을 사용하여 각 페이지에 대한 경로 설정 (예: `/`, `/main`, `/main/:movieId`, `/profile`).
+-   [ ] **`Layout` 컴포넌트**: 공통 레이아웃으로 `Header`와 `Footer`를 포함하며, `Outlet`을 통해 각 페이지 내용을 동적으로 표시.
+-   [ ] **페이지별 Route 설정**: `HomePage`, `MainPage`, `DetailPage`, `ProfilePage`를 각 경로에 맞춰 연결.
+-   [ ] **404 페이지 처리**: 유효하지 않은 경로에 접근할 경우 404 페이지 또는 홈으로 리다이렉트.
+
+---
+
+### 6. **스타일링**
+
+#### `global.css`
+
+-   [ ] **기본 스타일 설정**: 모든 페이지에 적용되는 기본 스타일 설정 (예: 폰트, 색상).
+-   [ ] **반응형 레이아웃**: 모바일, 태블릿, 데스크톱 화면에 맞게 각 요소의 크기와 배치를 조정하는 미디어 쿼리 작성.
+-   [ ] **로딩 스피너 스타일**: API 요청 중 로딩 상태를 표시할 스피너 스타일 작성.
+
+---
+
+### 7. **기타 기능**
+
+-   **에러 처리**
+
+    -   [ ] **API 오류 처리**: API 요청 실패 시 사용자에게 에러 메시지 표시.
+    -   [ ] **빈 검색 결과 처리**: 검색 결과가 없을 경우 사용자에게 안내 메시지 표시.
+    -   [ ] **권한 오류 처리**: 인증이 필요한 페이지 접근 시 로그인 페이지로 리다이렉트.
+
+-   **반응형 UI**
+    -   [ ] **모바일 최적화**: 모바일 기기에서 UI가 깨지지 않도록 레이아웃 및 스타일 조정.
+    -   [ ] **화면 크기별 레이아웃**: 데스크톱, 태블릿, 모바일 각각에 맞는 레이아웃을 설정하여 사용성 개선.

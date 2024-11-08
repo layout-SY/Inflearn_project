@@ -1,34 +1,36 @@
-import './App.css';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import HomePage from './pages/HomePage/HomePage';
 import MainPage from './pages/MainPage/MainPage';
 import DetailPage from './pages/DetailPage/DetailPage';
-import HomePage from './pages/HomePage/HomePage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import './App.css';
 
-function App() {
-	const Layout = () => {
-		return (
-			<div>
-				<Header />
-
-				<Outlet />
-
-				<Footer />
-			</div>
-		);
-	};
-
+function Layout({ children }) {
 	return (
 		<div>
-			<Routes>
-				<Route path="/" element={<Layout />}>
-					<Route index element={<HomePage />} />
-					<Route path="main" element={<MainPage />} />
-					<Route path="main/:moveId" element={<DetailPage />} />
-				</Route>
-			</Routes>
+			<Header />
+			<main>{children}</main>
+			<Footer />
 		</div>
+	);
+}
+
+function App() {
+	return (
+		<Router>
+			<Layout>
+				<Routes>
+					<Route path="/" element={<HomePage />} />
+					<Route path="/main" element={<MainPage />} />
+					<Route path="/main/:movieId" element={<DetailPage />} />
+					<Route path="/profile" element={<ProfilePage />} />
+					<Route path="*" element={<Navigate to="/" />} />
+				</Routes>
+			</Layout>
+		</Router>
 	);
 }
 
