@@ -7,7 +7,6 @@ function HomePage() {
 	return (
 		<Container>
 			<Content>
-				<BgImage />
 				<Center>
 					<LogoOne src="/images/cta-logo-one.svg" alt="로고1" />
 					<SignUpLink>지금 가입</SignUpLink>
@@ -16,6 +15,7 @@ function HomePage() {
 					</Description>
 					<LogoTwo src="/images/cta-logo-two.png" alt="로고2" />
 				</Center>
+				<BgImage />
 			</Content>
 		</Container>
 	);
@@ -27,7 +27,6 @@ const Container = styled.section`
 	flex-direction: column;
 	text-align: center;
 	height: 100vh;
-	outline: none;
 `;
 
 const Content = styled.div`
@@ -42,8 +41,6 @@ const Content = styled.div`
 	flex-direction: column;
 	padding: 80px 40px;
 	height: 100%;
-	outline: none;
-	z-index: 1; /* BgImage 뒤에 배치 */
 `;
 
 const BgImage = styled.div`
@@ -59,7 +56,6 @@ const BgImage = styled.div`
 	left: 0;
 	bottom: 0;
 	z-index: -1;
-	outline: none;
 `;
 
 const Center = styled.div`
@@ -67,8 +63,6 @@ const Center = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: center; /* 중앙 정렬 추가 */
-	justify-content: center; /* 수직 중앙 정렬 추가 */
 `;
 
 const LogoOne = styled.img`
@@ -77,7 +71,6 @@ const LogoOne = styled.img`
 	min-height: 1px;
 	display: block;
 	width: 100%;
-	outline: none;
 `;
 
 const SignUpLink = styled.a`
@@ -92,7 +85,6 @@ const SignUpLink = styled.a`
 	border: 1px solid transparent;
 	border-radius: 4px;
 	outline: none;
-
 	&:hover {
 		background-color: #0483ee;
 	}
@@ -104,7 +96,6 @@ const Description = styled.p`
 	margin: 0 0 24px;
 	line-height: 1.5;
 	letter-spacing: 1.5px;
-	outline: none;
 `;
 
 const LogoTwo = styled.img`
@@ -113,7 +104,6 @@ const LogoTwo = styled.img`
 	display: inline-block;
 	vertical-align: bottom;
 	width: 100%;
-	outline: none;
 `;
 
 export default HomePage;
