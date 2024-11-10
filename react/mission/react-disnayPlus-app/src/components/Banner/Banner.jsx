@@ -13,7 +13,6 @@ const Banner = () => {
 				popularMovieList.data.results[Math.floor(Math.random() * popularMovieList.data.results.length)].id
 			}`
 		);
-		console.log(movieData.data);
 		setPopularMovieData(movieData.data);
 	};
 
@@ -36,9 +35,7 @@ const Banner = () => {
 				</h1>
 
 				<div className="banner__buttons">
-					<button className="banner__button play" onClick={() => setIsClicked(true)}>
-						Play
-					</button>
+					<button className="banner__button play">Play</button>
 					<button className="banner__button info">More Information</button>
 				</div>
 
