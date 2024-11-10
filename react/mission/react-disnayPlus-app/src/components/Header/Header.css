@@ -28,6 +28,8 @@
 	right: 40px;
 	width: 30px;
 	object-fit: contain;
+	width: 80px;
+	height: 30px;
 }
 
 .search_input {
@@ -39,4 +41,13 @@
 	color: white;
 	padding: 5px;
 	border: none;
+}
+
+.user_image {
+	position: fixed;
+	right: 40px;
+	width: 30px;
+	object-fit: contain;
+	width: 80px;
+	height: 30px;
 }
