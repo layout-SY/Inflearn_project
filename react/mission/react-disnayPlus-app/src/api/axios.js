@@ -1,12 +1,16 @@
 import axios from 'axios';
 
+const api_key = import.meta.env.VITE_TMDB_API_KEY;
+
 const api = axios.create({
-	baseURL: `http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&detail=N&listCount=50&ServiceKey=8I246J03562Y9995346D`,
+	baseURL: `https://api.themoviedb.org/3/`,
+	headers: {
+		accept: 'application/json',
+	},
+	params: {
+		api_key: api_key,
+		language: 'ko-KR',
+	},
 });
 
-const test = async () => {
-	const getAPI = await api.get();
-	console.log(getAPI);
-};
-
-test();
+export default api;
