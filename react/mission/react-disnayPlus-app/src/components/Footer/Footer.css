@@ -1,0 +1,20 @@
+.footer {
+	padding: 20px;
+	background-color: #111;
+	color: #fff;
+	text-align: center;
+}
+
+.footer__company-info {
+	margin-bottom: 10px;
+}
+
+.footer__social-links a {
+	color: #fff;
+	margin: 0 10px;
+	font-size: 1.5rem;
+}
+
+.footer__social-links a:hover {
+	color: #1db954; /* 링크에 호버 효과 추가 */
+}

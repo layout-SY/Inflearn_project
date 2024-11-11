@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import api from '../../api/axios';
 import requests from '../../api/requests';
 import Banner from '../../components/Banner/Banner';
-import Company from '../../components/Company/Company';
+import FamousTheme from '../../components/FamousTheme/FamousTheme';
 
 const MainPage = () => {
 	return (
 		<div>
 			<Banner />
 
-			<Company />
+			<FamousTheme />
 		</div>
 	);
 };

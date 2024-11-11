@@ -18,3 +18,8 @@ thumb
 sketch
 
 # End of https://www.toptal.com/developers/gitignore/api/react
+react/mission/react-disnayPlus-app/public/videos/disney.mp4
+react/mission/react-disnayPlus-app/public/videos/marvel.mp4
+react/mission/react-disnayPlus-app/public/videos/national-geographic.mp4
+react/mission/react-disnayPlus-app/public/videos/pixar.mp4
+react/mission/react-disnayPlus-app/public/videos/star-wars.mp4
