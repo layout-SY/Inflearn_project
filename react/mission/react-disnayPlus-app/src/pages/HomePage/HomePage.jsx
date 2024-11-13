@@ -1,5 +1,4 @@
 import React from 'react';
-import './HomePage.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
